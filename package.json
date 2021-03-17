@@ -15,7 +15,9 @@
     "eslint": "eslint --config ./configs/eslintrc.config.js . --resolve-plugins-relative-to ./ --fix --quiet",
     "pretty": "./node_modules/.bin/prettier --config ./configs/prettier.config.js --ignore-path .eslintignore --write '**/*.{js,jsx}'",
     "start": "run-p web api",
-    "web": "webpack serve --config configs/webpack.js --progress --content-base src/"
+    "web": "webpack serve --config configs/webpack.js --progress --content-base src/",
+    "test": "jest",
+    "testwatch": "jest --watchAll"
   },
   "devDependencies": {
     "@babel/core": "7.12.10",

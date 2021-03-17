@@ -14,14 +14,22 @@
 
             <div class="card shadow-sm">
               <div class="card-body">
-                <h5 class="card-title">
+                <h3 class="card-title">
                   Goat Facts
-                </h5>
+                </h3>
                 
                 <form>
-                  <!-- Add Input filters here -->
+                    <fieldset class="filter">
+                        <legend>Filter</legend>
+                        <label for="wordFilter">Word: </label>
+                        <!-- Note : We can probably listen for keyUp to ensure only 1 word is entered? -->
+                        <input type="text" id="wordFilter" class="input-filter" placeholder="enter single word">
+                      
+                        <label for="indexFilter">Index: </label>
+                        <input type="number" id="indexFilter" class="input-filter" placeholder="enter positive number">
+                    </fieldset>
                 </form>
-                
+            </br>
                 <ul
                   class="list-group"
                   id="goat-facts-list"

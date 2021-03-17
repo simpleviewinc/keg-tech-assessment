@@ -1,6 +1,14 @@
+import axios from "axios"
+
 /**
- * getGoatFacts - Gets a list of goat facts from the backend API
+ * Hit the api endpoint and return an array of 20 goat facts
  */
 export const getGoatFacts = async () => {
-  console.error(`Step 4. Goat Facts api call!`)
+    try {
+        const res = await axios.get('http://localhost:5005/goats')
+        const facts = res.data.data  //Extract facts array from data that also contains status code
+        return facts
+    } catch (error) {
+        console.log(`Error retrieving data from API : ${error}`);
+    }
 }

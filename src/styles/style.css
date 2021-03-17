@@ -1,2 +1,26 @@
 /* Site CSS */
 
+html{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.card.shadow-sm{
+    background-color: lightskyblue;
+}
+
+.filter {
+    background-color: lightsteelblue;
+    padding: 5px;
+}
+
+.input-filter{
+    background-color: lightsteelblue;
+}
+
+li{
+    font-size: small;
+}
+
+
+
+
