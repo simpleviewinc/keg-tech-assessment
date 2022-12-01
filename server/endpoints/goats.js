@@ -3,7 +3,8 @@ const { goatFacts } = require('../libs/goatsLib')
 
 const getGoats = (app, config) => async (req, res) => {
   try {
-    const goats = await goatFacts()
+    const getall = req?.query?.getall || false;
+    const goats = await goatFacts(getall)
     return apiResponse(req, res, goats, 200)
   }
   catch (err) {
