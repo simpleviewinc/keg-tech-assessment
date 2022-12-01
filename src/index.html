@@ -11,42 +11,61 @@
       <div class="container mt-5">
         <div class="row row-cols-1">
           <div class="col">
-
-            <div class="card shadow-sm">
+            <!--
+              There should generally be one H1 page title per web page for SEO and page accessibility.
+              Subsequent page headings should follow a logical succession, which helps organize content
+              for assistive technologies.
+            -->
+            <h1 class="card-title mb-5 text-center">
+              Goat Facts
+            </h1>
+            <!--
+              Creating a bit of separation between the search form and the list of facts that follow
+            -->
+            <div class="card shadow-sm bg-light mb-3">
               <div class="card-body">
-                <h5 class="card-title">
-                  Goat Facts
-                </h5>
-                
-                <form>
-                  <!-- Add Input filters here -->
+                <h2 class="h4">Search Goat Facts</h2>
+                <form id="search-form">
+                  <div class="form-group row mb-2">
+                    <div class="col-sm-6">
+                      <label for="word-filter" class="mb-2">Keyword:</label>
+                      <input id="word-filter" name="word" class="form-control" type="text" required aria-describedby="word-filter-help">
+                      <small id="word-filter-help" class="form-text text-muted">Enter single words only (i.e. no spaces).</small>
+                    </div>
+                    <div class="col-sm-6">
+                      <label for="index-filter" class="mb-2">Word Position:</label>
+                      <input id="index-filter" name="index" class="form-control" type="number" min="1" value="1" required aria-describedby="index-filter-help">
+                      <small id="index-filter-help" class="form-text text-muted">Enter whole numbers only</small>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary align-item-center">Submit Query</button>
+                  <button type="reset" class="btn btn-secondary align-item-center">Clear Search</button>
                 </form>
-                
+              </div>
+            </div>
+            <div class="card shadow-sm mb-4">
+              <div class="card-body">
                 <ul
-                  class="list-group"
+                  class="list-group list-group-flush"
                   id="goat-facts-list"
                 >
                   <!-- Add Goat Facts Here -->
                 </ul>
               </div>
-
-              <div class="card-footer">
+              <div class="card-footer bg-light text-center">
                 <!-- When this button is clicked, it should get more goat facts -->
                 <button
                   type="button"
                   class="btn btn-primary"
                   id="get-goat-facts"
                 >
-                  Get Goat Facts
+                  Get Random Goat Facts
                 </button>
               </div>
             </div>
-
           </div>
         </div>
       </div>
     </main>
   </body>
-  
 </html>
-
