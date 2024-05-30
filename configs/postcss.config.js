@@ -1,3 +1,14 @@
 module.exports = {
-  plugins: [ require('postcss-preset-env')(), require('cssnano')() ],
-}
+    plugins: {
+        'postcss-preset-env': {
+            features: {
+                'color-adjust': false
+            }
+        },
+        'cssnano': {
+            preset: ['default', {
+                discardUnused: false // Prevents optimizations that might include color-adjust
+            }]
+        }
+    }
+};

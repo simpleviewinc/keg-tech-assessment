@@ -18,11 +18,13 @@ module.exports = {
   },
   devtool: "inline-cheap-source-map",
   devServer: {
-    contentBase: path.join(__dirname, "../build"),
+    static: {
+		directory: path.join(__dirname, "../build"),
+	},
     compress: true,
     host: config.web.host,
     port: config.web.port,
-    overlay: true
+   /* overlay: true*/
   },
   module: {
     rules: [
