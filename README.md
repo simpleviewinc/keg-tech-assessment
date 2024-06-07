@@ -42,7 +42,9 @@
 1. **Setup the environment**
    * Use the commands listed in the `Installation` section above
    * Open your browser to http://localhost:3000
-     * It should load the test application
+     * It should load the test application.
+
+	* Note that as at 6/7/2024, there is a compilation error when you go to the page. Close this warning with the 'x' at the top right and move on.
 
 2. **Fix the error messages**
    * Open your browser's inspector, to see all the errors on the page
