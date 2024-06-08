@@ -3,11 +3,12 @@ const { doIt } = require('@keg-hub/jsutils')
 const factList = require('./goatFacts.json')
 
 const getRandomFact = () => {
-  throw new Error(`Random goat fact code not implemented!`)
+  return factList;
+  // throw new Error(`Random goat fact code not implemented!`)
 }
 
 const goatFacts = async () => {
-  return doIt(20, global, () => getRandomFact())
+  return doIt(1, global, () => getRandomFact())
 }
 
 module.exports = {

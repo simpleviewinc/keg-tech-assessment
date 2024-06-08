@@ -18,6 +18,7 @@ const rootPath = path.join(path.normalize(__dirname), '..')
  * @returns {void}
  */
 const setupCors = (app, config = noOpObj) => {
+  console.log("PreCORs");
   if (!app) return
 
   const origins = config.origins || noPropArr
@@ -29,7 +30,8 @@ const setupCors = (app, config = noOpObj) => {
       ? origin
       : allowedOrigins[0]
 
-    res.header('Access-Control-Allow-Origin', foundOrigin)
+    // the foundOrigin was comming up undefined, hared coded the url to continue for now, will look into fixing it later
+    res.header('Access-Control-Allow-Origin', "http://localhost:3000")
     res.header(
       'Access-Control-Allow-Headers',
       'Origin, X-Requested-With, Content-Type, Accept'
