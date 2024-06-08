@@ -1,2 +1,26 @@
 /* Site CSS */
 
+.card-title {
+    font-size: 40px;
+    padding-bottom: 20px;
+}
+
+.list-group {
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.filter{
+    margin-left: 10px;
+    padding-left: 8px;
+}
+
+#clearFilters {
+    float: right;
+    font-weight: bold;
+}
+
+#get-goat-facts{
+    margin: 10px 5px;
+    font-weight: bold;
+}
