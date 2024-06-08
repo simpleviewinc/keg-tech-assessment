@@ -1,13 +1,23 @@
 const { doIt } = require('@keg-hub/jsutils')
-// eslint-disable-next-line no-unused-vars
-const factList = require('./goatFacts.json')
+const factList = require('./goatFacts.json');
 
-const getRandomFact = () => {
-  throw new Error(`Random goat fact code not implemented!`)
+const getRandomFact = (usedIndexes) => {
+  // TODO: Test this -- it's not working SAD
+  let idx;
+  do {
+    idx = Math.floor(Math.random() * factList.length);
+  } while (usedIndexes.has(idx));
+  usedIndexes.add(idx);
+
+  return factList[idx];
 }
 
-const goatFacts = async () => {
-  return doIt(20, global, () => getRandomFact())
+async function goatFacts() {
+  // TODO: Test this
+  // Keep track of which facts are already used so duplicate facts aren't sent
+  // in the same api call
+  const usedIndexes = new Set();
+  return doIt(20, global, () => getRandomFact(usedIndexes))
 }
 
 module.exports = {
