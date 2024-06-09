@@ -1,6 +1,6 @@
-import { normalizeWord } from "../../src/functions";
+import { normalizeWord } from "../../src/functions/normalizeWord";
 
-describe.skip("normalizeWord", () => {
+describe("normalizeWord", () => {
   it("lowercases the word", () => {
     const word = normalizeWord("Chicken");
     expect(word).toBe("chicken");
@@ -28,10 +28,10 @@ describe.skip("normalizeWord", () => {
 
   it("treats '&' as a word", () => {
     const word = normalizeWord("&");
-    expect(word).toBe('&')
+    expect(word).toBe("&");
   });
 
-  // tags
-
-  // &lt;
+  it("handles 'A' correctly", () => {
+    expect(normalizeWord("A")).toBe("a");
+  });
 });

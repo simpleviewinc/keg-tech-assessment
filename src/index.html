@@ -8,26 +8,29 @@
   </head>
   <body>
     <main>
-      <div class="container mt-5">
+      <div class="container my-5">
         <div class="row row-cols-1">
           <div class="col">
-
             <div class="card shadow-sm">
+              <h5 class="card-title card-header">
+                Goat Facts
+              </h5>
               <div class="card-body">
-                <h5 class="card-title">
-                  Goat Facts
-                </h5>
-                
                 <form>
-                  <input type="text" id="text-input" name="text-filter"/>
-                  <input type="number" id="number-input" name="number-filter"/>
+                  <div class="form-group mb-3">
+                    <label for="text-input" class="mb-1">Word</label>
+                    <input type="text" id="text-input" name="text-filter" class="form-control"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="number-input" class="mb-1">Number</label>
+                    <input type="number" id="number-input" name="number-filter" class="form-control"/>
+                  </div>
                 </form>
                 
                 <ul
-                  class="list-group"
+                  class="list-group list-group-flush"
                   id="goat-facts-list"
-                >
-                </ul>
+                ></ul>
               </div>
 
               <div class="card-footer">

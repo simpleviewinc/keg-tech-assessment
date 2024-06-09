@@ -1,8 +1,5 @@
 module.exports = {
   plugins: {
-    'postcss-preset-env': {
-      features: {},
-    },
     cssnano: {
       preset: [
         'default',
