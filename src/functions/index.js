@@ -1,0 +1,5 @@
+export * from './normalizeWord'
+export * from './cleanFact'
+export * from './DomList'
+export * from './getGoatFacts'
+export * from './GoatFacts'

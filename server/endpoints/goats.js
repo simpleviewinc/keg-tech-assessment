@@ -1,9 +1,9 @@
 const { apiErr, apiResponse } = require('./handler')
 const { goatFacts } = require('../libs/goatsLib')
 
-const getGoats = (app, config) => async (req, res) => {
+const getGoats = (app, config) => (req, res) => {
   try {
-    const goats = await goatFacts()
+    const goats = goatFacts()
     return apiResponse(req, res, goats, 200)
   }
   catch (err) {

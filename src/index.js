@@ -1,23 +1,39 @@
-import './styles/style.css'
 import './styles/bootstrap.min.css'
-import { getGoatFacts } from './getGoatFacts'
-import { addGoatFacts } from './addGoatFacts'
-import { filterGoatFacts } from './filterGoatFacts'
+import { DomList, getGoatFacts, GoatFacts } from './functions'
+
+const goatFactsButton = document.querySelector('#get-goat-facts')
+const textInput = document.querySelector('#text-input')
+const numberInput = document.querySelector('#number-input')
+const goatFactsList = document.querySelector('#goat-facts-list')
+
+const listContainer = new DomList(goatFactsList)
+const appState = new GoatFacts(listContainer)
+
+goatFactsButton.addEventListener('click', onGetGoatFacts)
+textInput.addEventListener('input', onTextChange)
+numberInput.addEventListener('input', onNumberChange)
 
 /**
  * onGetGoatFacts - Action to update the goat facts displayed on the Dom
  */
-const onGetGoatFacts = async () => {
-  console.error(`Step 3. Should be called by the Get Goat Facts button!`)
-
+async function onGetGoatFacts(e) {
+  e.preventDefault()
   const facts = await getGoatFacts()
-
-  const filteredFacts = filterGoatFacts(facts)
-
-  addGoatFacts(filteredFacts)
+  appState.goatFacts = facts
 }
 
-;(async () => {
-  console.error(`Step 2. Open the browser inspector!`)
-  await onGetGoatFacts()
-})()
+/**
+ * onTextChange - Action to update the goat facts based on text entry
+ */
+function onTextChange(e) {
+  // Removes any whitespace
+  e.target.value = e.target.value.replace(/\s/g, '')
+  appState.wordFilter = e.target.value
+}
+
+/**
+ * onTextChange - Action to update the goat facts based on text entry
+ */
+function onNumberChange(e) {
+  appState.numberFilter = Number(e.target.value)
+}

@@ -15,7 +15,8 @@
     "eslint": "eslint --config ./configs/eslintrc.config.js . --resolve-plugins-relative-to ./ --fix --quiet",
     "pretty": "./node_modules/.bin/prettier --config ./configs/prettier.config.js --ignore-path .eslintignore --write '**/*.{js,jsx}'",
     "start": "run-p web api",
-    "web": "webpack serve --config configs/webpack.js --progress --static src/"
+    "web": "webpack serve --config configs/webpack.js --progress --static src/",
+    "test": "jest --watch"
   },
   "devDependencies": {
     "@babel/core": "7.24.4",
@@ -71,5 +72,10 @@
   },
   "resolutions": {
     "autoprefixer": "10.4.5"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "axios": "axios/dist/node/axios.cjs"
+    }
   }
 }
