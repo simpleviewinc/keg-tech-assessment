@@ -2,8 +2,8 @@ const { uuid } = require('@keg-hub/jsutils')
 
 module.exports = {
   api: {
-    /**I update origins to able to access from localhost:3000, or we can use '*' for any other port but not good practice */
-    origins: ['localhost:3000'],
+    /**I update origins to use ['*'] to able to access from localhost:3000, or any other origins (not secure way) */
+    origins: ['*'],
     port: 5005,
     host: '0.0.0.0',
     uuid: uuid(),

@@ -13,9 +13,9 @@ const onGetGoatFacts = async () => {
   const word = document.getElementById('word-input').value
   const number = document.getElementById('number-input').value
 
-  // Check if the number is less than or equal to 0
-  if (number && number <= 0) {
-    alert('Please enter a number greater than 0')
+  // we only want positive number which > 0 and not decimal
+  if (number !== "" && (number <= 0|| !Number.isInteger(parseFloat(number)))) {
+    alert('Please enter a positive number greater than 0')
     return
   }
 
