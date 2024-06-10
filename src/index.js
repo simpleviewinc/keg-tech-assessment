@@ -22,6 +22,8 @@ const onGetGoatFacts = async () => {
   const facts = await getGoatFacts()
 
   //change filterGoatFacts function parameters to included word & number inputs
+  /** based on task description, 
+   * my assumption is that user input the fields then hit get Goat button to load new Facts with filtered */
   const filteredFacts = filterGoatFacts(facts,word,number)
 
   addGoatFacts(filteredFacts)
