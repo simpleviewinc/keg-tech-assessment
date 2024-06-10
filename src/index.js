@@ -47,10 +47,26 @@ const onFilterChange = () => {
   wordInput.type = 'text';
   wordInput.placeholder = 'Enter a word';
 
+  // Add event listener to check for spaces
+  wordInput.addEventListener('input', function(e) {
+    if (e.target.value.includes(' ')) {
+      alert('Please enter a word without spaces.');
+      e.target.value = e.target.value.replace(/\s/g, '');
+    }
+  });
+
   const numberInput = document.createElement('input');
   numberInput.id = 'number-input';
   numberInput.type = 'number';
   numberInput.placeholder = 'Enter a number';
+
+  // Add event listener to check for negative numbers and decimals
+  numberInput.addEventListener('input', function(e) {
+    if (e.target.value !=='' && (e.target.value <= 0 || e.target.value % 1 != 0)) {
+      alert('Please enter a positive integer only.');
+      e.target.value = Math.max(0, Math.floor(e.target.value));
+    }
+  });
 
   /**
    *  Append input fields - use querySelector to grab the 1st form available 
