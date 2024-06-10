@@ -67,7 +67,8 @@
   ],
   "dependencies": {
     "@babel/plugin-transform-private-methods": "^7.24.1",
-    "autoprefixer": "10.4.5"
+    "autoprefixer": "10.4.5",
+    "yarn": "^1.22.22"
   },
   "resolutions": {
     "autoprefixer": "10.4.5"
