@@ -13,6 +13,12 @@ const onGetGoatFacts = async () => {
   const word = document.getElementById('word-input').value
   const number = document.getElementById('number-input').value
 
+  // Check if the number is less than or equal to 0
+  if (number && number <= 0) {
+    alert('Please enter a number greater than 0')
+    return
+  }
+
   const facts = await getGoatFacts()
 
   //change filterGoatFacts function parameters to included word & number inputs
@@ -38,7 +44,8 @@ const onGetGoatFacts = async () => {
   numberInput.placeholder = 'Enter a number';
 
   /**
-   *  Append input fields - use querySelector to grab the 1st form available but if there are more forms field, need to give them id name and grab it
+   *  Append input fields - use querySelector to grab the 1st form available 
+   * but if there are more forms field, need to give them id name and grab it
   */
   const formDOM = document.querySelector('form')
   formDOM.appendChild(wordInput);
